@@ -40,9 +40,10 @@ else
          # Refrescar fuentes desde repo (ojo, se pierden cambios locales)
          git reset --hard
          git pull
-         # Permisos de ejecución en los scripts
-         chmod --recursive +x *.sh
       fi
+      # Permisos de ejecución en los scripts
+      cd "$v_ruta_base"
+      find ./ -type f -iname "*.sh" -exec chmod +x {} \;
    fi
 fi
 
