@@ -52,7 +52,7 @@ v_carpeta_instalador_sistema=$v_carpeta_instaladores/$v_sistema
 v_carpeta_configuracion_sistema=$v_carpeta_configuraciones/$v_sistema
 v_archivo_parametros_instalacion=$v_carpeta_configuracion_sistema/response.varfile
 
-v_ftp_url=ftp.datalogic.com.uy
+v_ftp_url=10.1.1.36
 v_ftp_usuario=cliente
 v_ftp_password=cli.1717
 v_manager_usuario=datalogic
