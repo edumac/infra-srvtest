@@ -7,4 +7,6 @@ git pull
 
 # Permisos de ejecución en los scripts
 chmod --recursive +x *.sh
+find ./ -type f -iname "*.sh" -exec chmod +x {} \;
+
 
