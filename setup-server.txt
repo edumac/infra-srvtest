@@ -1,0 +1,56 @@
+--------------------------------------------------------------
+-- Pasos a realizar para configurar el servidor
+-- Se asume que el servidor solo tiene instalado CentOS 8
+--------------------------------------------------------------
+
+--
+-- Conectar por putty como root.
+--
+
+--------------------------------------------
+-- instalar htop para ver recursos
+--------------------------------------------
+> yum -y install epel-release
+> yum -y install htop
+
+--------------------------------------------
+-- instalar docker
+--------------------------------------------
+> yum install -y yum-utils
+> yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+> yum erase -y podman buildah
+> yum install -y libseccomp-devel
+> yum install -y docker-ce docker-ce-cli containerd.io
+
+> systemctl start docker
+
+-- Probar docker
+> docker run hello-world
+
+--------------------------------------------
+-- Crear carpeta persistida usada por todos los contenedores
+--------------------------------------------
+> mkdir /storage
+> chmod 777 /storage
+
+--------------------------------------------
+-- Desplegar contenedores
+--------------------------------------------
+
+-- ngnx
+
+-- jenkins
+mkdir /storage/jenkins
+chmod 777 /storage/jenkins/
+docker run -d -v /storage/jenkins:/var/jenkins_home:rw,z -p 81:8080 -p 50000:50000 --env JAVA_OPTS=-Xmx512m --name jenkins jenkins/jenkins:lts-jdk11
+
+-- Luego de instalado, entrar desde navegador a http://srvtest:81 y configurar Jenkins 
+-- dejando las siguientes credenciales de administracion:
+usr: admin
+pas: dlc/1840
+
+-- test1
+
+
+
+-- test2

@@ -1,0 +1,1 @@
+docker run -p 99:8080 --network cliente1-network --rm --name dl-tomcat-base dl-tomcat-base

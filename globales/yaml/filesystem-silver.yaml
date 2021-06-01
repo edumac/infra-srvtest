@@ -1,0 +1,16 @@
+# Volumen persistido (categoria silver)
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+ name: datalogic01-pvc
+ labels:
+   billingType: hourly
+   region: us-south
+   zone: dal10
+spec:
+ accessModes:
+   - ReadWriteMany
+ resources:
+   requests:
+     storage: 20Gi
+ storageClassName: ibmc-file-silver

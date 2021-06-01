@@ -1,0 +1,43 @@
+# Registro del Delpoyment de la aplicación con la imagen cliente1:1.3.
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cliente3
+  namespace: default
+  labels:
+     app: cliente3
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cliente3
+  template:
+    metadata:
+      labels:
+        app: cliente3
+    spec:
+      containers:
+      - name: cliente3
+        image: us.icr.io/datalogic-demo/dl-tomcat-base:1.0
+        resources: 
+          limits:
+            cpu: 900m
+            memory: 2048Mi 
+          requests:
+            cpu: 100m
+            memory: 300Mi 
+        # URL del cliente que identifica la carpeta de donde se tomarán las propiedades para la instalacion
+        env:
+          - name: cliente_url
+            value: cliente3.platformdemos.cloud
+          - name: mount_path
+            value: /vol01
+        volumeMounts:
+        - name: dl-vol01-pvc
+          mountPath: /vol01
+        ports:
+          - containerPort: 8080
+      volumes:
+      - name: dl-vol01-pvc
+        persistentVolumeClaim: 
+          claimName: dl-vol01-pvc

@@ -1,0 +1,16 @@
+---
+# Registro del Ingress que apunta al servicio (URL externa).
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: acceso-cliente2
+  namespace: default
+spec:
+  rules:
+    - host: cliente1.platformdemos.cloud
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: cliente2-servicio
+              servicePort: 8080

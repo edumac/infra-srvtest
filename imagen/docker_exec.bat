@@ -1,0 +1,1 @@
+docker exec -it dl-tomcat-base /bin/bash

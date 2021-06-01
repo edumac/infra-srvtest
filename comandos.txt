@@ -1,0 +1,23 @@
+LOCAL:
+
+Luego de cambiar un archivo local
+> git add .
+> git commit -am "modificacion 2 desde equipo local"
+> git push origin master
+
+SERVER:
+
+> cd /vol01
+
+> git clone https://github.com/edumac/ibmcloud.git
+
+> cd ibmcloud
+
+> chmod +x *.sh
+
+> git reset --hard
+> git pull
+> chmod +x *.sh
+
+
+
