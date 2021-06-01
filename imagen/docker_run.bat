@@ -1,1 +1,1 @@
-docker run -p 99:8080 --network cliente1-network --rm --name dl-tomcat-base dl-tomcat-base
+docker run -p 82:8080 --rm -v /storage:/storage:rw,z --env mount_path="/storage" --env cliente_url="bca" --name dl-tomcat-base-82 dl-tomcat-base

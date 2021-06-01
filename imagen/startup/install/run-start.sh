@@ -7,7 +7,7 @@
 #   path al volumen persistente (mountPath del yaml) ej: /vol01
 
 # Estas variables se usaran en los scripts invocados (por eso se usa export).
-export v_git_repo_url="https://github.com/edumac/ibmcloud.git"
+export v_git_repo_url="https://github.com/edumac/infra-srvtest.git"
 export v_ruta_base=$mount_path/ibmcloud
 export v_url_instalacion=$cliente_url
 export v_ruta_tomcat=/usr/local/tomcat
