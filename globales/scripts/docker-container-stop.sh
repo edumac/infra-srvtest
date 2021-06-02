@@ -1,8 +1,9 @@
 #!/bin/bash
 
+contenedor_a_detener=$cliente+"-"+$puerto
 echo "------------------------------------------------------------------------------------------"
-echo "-- LISTA DE INSTALACIONES ACTIVAS "
+echo "-- DETENIENDO INSTALACION "$contenedor_a_detener
 echo "------------------------------------------------------------------------------------------"
-# docker container ls --format '{{.ID}}\t{{.Image}}\t{{.Status}}\t{{.Ports}}\t{{.Names}}'
-docker container ls --format 'table {{.Names}}\t{{.Status}}\t{{.Ports}}'
+echo "docker stop" $contenedor_a_detener
+docker stop $contenedor_a_detener
 echo "------------------------------------------------------------------------------------------"
