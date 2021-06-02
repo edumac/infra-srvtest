@@ -1,6 +1,6 @@
 #!/bin/bash
 
-contenedor_a_detener=$cliente+"-"+$puerto
+contenedor_a_detener=$cliente"-"$puerto
 echo "------------------------------------------------------------------------------------------"
 echo "-- DETENIENDO INSTALACION "$contenedor_a_detener
 echo "------------------------------------------------------------------------------------------"
